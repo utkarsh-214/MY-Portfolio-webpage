@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0903f52b91.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="Images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Software Engineer</p>
+                <h1>Hi, I am <span>Utkarsh</span> Sharma</h1>
+            </div>
+        </div>
+    </div>
+<!------------about------------------>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae deserunt ex quo harum possimus nostrum consectetur dolorum architecto. Neque aliquid praesentium vitae, sint dolorem eos obcaecati! Similique quisquam ex aliquid?</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Projects</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web backend</span><br>handling backend of website</li>
+                            <li><span>DBMS</span><br>Managing Sql and Nosql databases</li>
+                            <!--<li><span>Web backend</span><br>handling backend of website</li>-->
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Web backend</span><br>handling backend of website</li>
+                            <li><span>DBMS</span><br>sdjfaskjdfojqwer and Nosql databases</li>
+                            <!--<li><span>Web backend</span><br>handling backend of website</li>-->
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Web backend</span><br>handling backend of website</li>
+                            <li><span>DBMS</span><br>Managing Sql and Nosql databases</li>
+                            <!--<li><span>Web backend</span><br>handling backend of website</li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!---------------services-------------------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel placeat laboriosam fugiat non ut eveniet dolores! Nam tenetur cum, sapiente tempora fuga ipsa beatae quasi, magnam corporis, velit debitis exercitationem?</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-code-branch"></i>
+                <h2>UI UX</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel placeat laboriosam fugiat non ut eveniet dolores! Nam tenetur cum, sapiente tempora fuga ipsa beatae quasi, magnam corporis, velit debitis exercitationem?</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-laptop-code"></i>
+                <h2>App Design</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel placeat laboriosam fugiat non ut eveniet dolores! Nam tenetur cum, sapiente tempora fuga ipsa beatae quasi, magnam corporis, velit debitis exercitationem?</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------------contact---------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>Utkarsh.sharma20@st.niituniversity.in</p>
+                <p><i class="fa-solid fa-square-phone"></i>9414412260</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/utkarsh-sharma-2ba802222"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="Images/my-cv.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" requried>
+                    <textarea name="Message" row="6" placeholder="Your Message" ></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for (tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    };
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right= "-200px";
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwhO41rcOPZ57wynqeMdg733_gSRISEBe8vIUrydvYs3vZLGWd88_IkY5-WLZIlPRhD/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById("msg");
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message Sent sucessfully";
+            setTimeout(function(){
+                msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
+    });
+  </script>
+</body>
+</html>
