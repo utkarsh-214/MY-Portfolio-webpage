@@ -37,6 +37,8 @@ nav{
     position: sticky;
     top: 0;
     background-color: black;
+    opacity: 0.9;
+    z-index: 1;
 }
 
 .logo{
